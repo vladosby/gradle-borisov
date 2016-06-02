@@ -41,3 +41,13 @@ task printJodaTime {
         println "Time ${new DateTime()}"
     }
 }
+
+task printNameFromProperties {
+    doFirst {
+        println "Hello $personName"
+    }
+
+    doLast {
+        println "Bye $personName"
+    }
+}
