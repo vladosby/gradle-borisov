@@ -108,3 +108,13 @@ task runIntegrationTast(type:JavaExec) {
     main = 'com.test.HelloMessage'
     classpath sourceSets.test.runtimeClasspath
 }
+
+
+gradle.addBuildListener(new BuildAdapter() {
+    @Override
+    void buildFinished(BuildResult result) {
+        if(result.failure) {
+            getProject().sendMail.execute()
+        }
+    }
+})
