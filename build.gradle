@@ -99,3 +99,6 @@ c.dependsOn d
 
 test.testLogging.showStandardStreams = true
 //test.testLogging.exceptionFormat "full"
+
+build.dependsOn.remove(check)
+build.dependsOn a
