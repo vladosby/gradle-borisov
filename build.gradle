@@ -1,12 +1,15 @@
 import org.joda.time.DateTime
 
+import java.time.DayOfWeek
+import java.time.LocalDate
+
 group 'gradle-borisov'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'groovy'
 apply plugin: 'java'
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.8
 
 buildscript {
     repositories{
@@ -51,3 +54,20 @@ task printNameFromProperties {
         println "Bye $personName"
     }
 }
+
+task conditionalTask {
+    onlyIf {
+        DayOfWeek.MONDAY == LocalDate.now().getDayOfWeek()
+    }
+
+    doLast {
+        println 'conditionalTask is working'
+    }
+}
+
+/*
+
+Override alien task
+compileJava.onlyIf {
+
+}*/
