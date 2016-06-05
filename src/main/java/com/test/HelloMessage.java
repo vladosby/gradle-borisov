@@ -5,7 +5,7 @@ package com.test;
  */
 public class HelloMessage {
     public static void main(String[] args) {
-        System.out.println(new HelloMessage().getMessage());
+        System.out.println(new HelloMessage().getMessage() + " test");
     }
 
     public String getMessage() {

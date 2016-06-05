@@ -102,3 +102,9 @@ test.testLogging.showStandardStreams = true
 
 build.dependsOn.remove(check)
 build.dependsOn a
+
+
+task runIntegrationTast(type:JavaExec) {
+    main = 'com.test.HelloMessage'
+    classpath sourceSets.test.runtimeClasspath
+}
