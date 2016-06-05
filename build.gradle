@@ -76,3 +76,22 @@ compileJava.onlyIf {
 task sendMail(type:mail.MailTask) {
     to = 'Blablabla@gm.com'
 }
+
+task a << {
+    println 'a'
+}
+
+task b << {
+    println 'b'
+}
+
+task c << {
+    println 'c'
+}
+
+task d << {
+    println 'd'
+}
+
+a.dependsOn b, c
+c.dependsOn d
