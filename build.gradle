@@ -8,6 +8,7 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'groovy'
 apply plugin: 'java'
+apply plugin: 'idea'
 
 sourceCompatibility = 1.8
 
@@ -71,3 +72,7 @@ Override alien task
 compileJava.onlyIf {
 
 }*/
+
+task sendMail(type:mail.MailTask) {
+    to = 'Blablabla@gm.com'
+}
